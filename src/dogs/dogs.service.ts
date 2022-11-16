@@ -12,7 +12,7 @@ export class DogsService {
   }
 
   create(createDogDto: CreateDogDto) {
-    return 'This action adds a new dog';
+    return this.dogRepository.save(createDogDto);
   }
 
   findAll() {

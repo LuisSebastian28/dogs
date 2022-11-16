@@ -5,17 +5,18 @@ import { DogsModule } from './dogs/dogs.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [DogsModule,
-  TypeOrmModule.forRoot({
-    type:'mysql',
-    host:'localhost',
-    port: 3306,
-    username:'root',
-    password:'abcdefg',
-    database:'dbdogs',
-    synchronize:true,
-    autoLoadEntities:true
-  })
+  imports: [
+    DogsModule,
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: 'abcdefg',
+      database: 'dbdogs',
+      synchronize: true,
+      autoLoadEntities: true,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
